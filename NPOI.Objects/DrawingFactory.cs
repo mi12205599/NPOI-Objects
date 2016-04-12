@@ -295,10 +295,6 @@ namespace NPOI.Objects
 
         private void DrawRow(IEnumerable<ColumnDrawing> drawings, ISheet sheet, int rowIndex, object obj)
         {
-            if (rowIndex == 3)
-            {
-                Console.Write(rowIndex);
-            }
             var row = sheet.CreateRow(rowIndex);
             foreach (var drawing in drawings)
             {
