@@ -152,13 +152,14 @@ namespace NPOI.Objects
                     cellInfo.ColumnName = property.Name;
                 // Column style information
                 var headerStyleAttr = property.GetCustomAttribute<HeaderStyleAttribute>();
+                if (headerStyleAttr != null)
+                    cellInfo.ColumnWidth = headerStyleAttr.ColumnWidth;
                 var headerStyle = FillStyle(headerStyleAttr);
                 if (headerStyle != null)
                     cellInfo.HeaderStyle = headerStyle;
                 var headerFont = FillFont(headerStyleAttr);
                 if (headerFont != null)
                     cellInfo.HeaderFont = headerFont;
-                cellInfo.ColumnWidth = headerStyleAttr.ColumnWidth;
 
                 var cellStyleAttr = property.GetCustomAttribute<CellStyleAttribute>();
                 if (cellStyleAttr != null)
