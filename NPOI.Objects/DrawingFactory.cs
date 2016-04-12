@@ -90,6 +90,8 @@ namespace NPOI.Objects
 
         private IFont FillFont(StyleAttribute attr)
         {
+             if (attr == null)
+                return null;
             if (attr.FontWeight > 0
                 || !string.IsNullOrEmpty(attr.FontFamily)
                 || attr.FontSize > 0
